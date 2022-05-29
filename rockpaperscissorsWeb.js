@@ -23,6 +23,10 @@ The possible outcomes are:
 3) Compare the two choices and determine a winner.
 4) Start the program and display the results.
 
+Bonus Challenge:
+5) Player and computer gets a level up everytime they win so let's see who can get to level 100 first.
+   Ready, get set, GO!!!
+
 *//* -------------------------------------------------------------------------------------
     Script
 --------------------------------------------------------------------------------------- */
@@ -151,16 +155,25 @@ const playGame = (userInput) => {
     levelUp(result);
 }
 
+// 5) Compete with the computer and race to level 100! Who will be the winner?
+
 function levelUp(result) {
-  if (result === "You won!") {
-    playerLevel += 1;
-    showPlayerLevel(playerLevel);
-    // document.getElementsByClassName("playerLevel")[0].innerHTML = playerLevel;
-  } 
-  else if (result === "The computer won!") {
-    computerLevel += 1;
-    showComputerLevel(computerLevel);
-    // document.getElementsByClassName("computerLevel")[0].innerHTML = computerLevel;
+  if (playerLevel != 100 || computerLevel != 100) {
+    if (result === "You won!") {
+      playerLevel += 1;
+      showPlayerLevel(playerLevel);
+    } 
+    else if (result === "The computer won!") {
+      computerLevel += 1;
+      showComputerLevel(computerLevel);
+    }
+  } else {
+      if (playerLevel === 100) {
+        showGameClear();
+      }
+      else if (computerLevel === 100) {
+        showGameOver();
+      }
   }
 }
 
@@ -205,6 +218,26 @@ function showPlayerLevel(playerLevel) {
 function showComputerLevel(computerLevel) {
   document.getElementsByClassName("computerLevel")[0].innerHTML = computerLevel;
   document.getElementsByClassName("computerLevel")[1].innerHTML = computerLevel;
+}
+
+//Automatically end the game once player or computer reaches level 100. Good job, please go take a break!
+
+function showGameClear() {
+  document.getElementsByClassName("playerChoice")[0].src = "images/trophy-solid.svg";
+  document.getElementsByClassName("playerChoice")[1].src = "images/trophy-solid.svg";
+  document.getElementsByClassName("computerChoice")[0].src = "images/hands-clapping-solid.svg";
+  document.getElementsByClassName("computerChoice")[1].src = "images/hands-clapping-solid.svg";
+  document.getElementsByClassName("gameResult")[0].innerHTML = `Congrats you're level 100!<br>Time to take a break.`;
+  document.getElementsByClassName("gameResult")[1].innerHTML = `Congrats you're level 100!<br>Time to take a break.`;
+}
+
+function showGameOver() {
+  document.getElementsByClassName("playerChoice")[0].src = "images/face-sad-cry-solid.svg";
+  document.getElementsByClassName("playerChoice")[1].src = "images/face-sad-cry-solid.svg";
+  document.getElementsByClassName("computerChoice")[0].src = "images/trophy-solid.svg";
+  document.getElementsByClassName("computerChoice")[1].src = "images/trophy-solid.svg";
+  document.getElementsByClassName("gameResult")[0].innerHTML = `Computer is level 100!<br>Try again next time.`;
+  document.getElementsByClassName("gameResult")[1].innerHTML = `Computer is level 100!<br>Try again next time.`;
 }
 
 /* -------------------------------------------------------------------------------------

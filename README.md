@@ -8,8 +8,8 @@ Rock paper scissors is a classic two player game. Each player chooses either roc
 - Scissors cut paper. <br>
 - Paper covers rock. <br>
 - If there's a tie, then the game ends in a draw. <br>
-- But wait... there's also a surprise waiting for you to discover!
-</p>
+- But wait... there's also a surprise waiting for you to discover! </p>
+<p><em><u>Bonus Challenge:</u> Player and computer gets a level up everytime they win so let's see who can get to level 100 first. Ready, get set, GO!!! </em>😝</p>
 
 <hr><br>
 <p>I like to write codes to build applications and make things move but I like to see them in action too. Thus after completing the Rock, Paper or Scissors JavaScript project on CodeAcademy, I decided to create a complete version that can be played on the browser.</p>

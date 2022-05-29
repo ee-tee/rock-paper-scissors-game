@@ -158,22 +158,27 @@ const playGame = (userInput) => {
 // 5) Compete with the computer and race to level 100! Who will be the winner?
 
 function levelUp(result) {
-  if (playerLevel != 100 || computerLevel != 100) {
-    if (result === "You won!") {
-      playerLevel += 1;
-      showPlayerLevel(playerLevel);
-    } 
-    else if (result === "The computer won!") {
-      computerLevel += 1;
-      showComputerLevel(computerLevel);
+  if (playerLevel === 100 || computerLevel === 100) {
+    if (playerLevel === 100) {
+      showGameClear();
+        // The game ends if player reaches level 100, player wins; or
     }
-  } else {
-      if (playerLevel === 100) {
-        showGameClear();
+    else if (computerLevel === 100) {
+      showGameOver();
+        //The game ends when computer reaches level 100, computer wins.
+    } 
+    else {
+      if (result === "You won!") {
+        playerLevel += 1;
+        showPlayerLevel(playerLevel);
+          //The game continues and player gains another level; or
+      } 
+      else if (result === "The computer won!") {
+        computerLevel += 1;
+        showComputerLevel(computerLevel);
+          //The game continues and computer gains another level.
       }
-      else if (computerLevel === 100) {
-        showGameOver();
-      }
+    }  
   }
 }
 

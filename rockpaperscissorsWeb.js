@@ -166,20 +166,20 @@ function levelUp(result) {
     else if (computerLevel === 100) {
       showGameOver();
         //The game ends when computer reaches level 100, computer wins.
-    } 
-    else {
-      if (result === "You won!") {
-        playerLevel += 1;
-        showPlayerLevel(playerLevel);
-          //The game continues and player gains another level; or
-      } 
-      else if (result === "The computer won!") {
-        computerLevel += 1;
-        showComputerLevel(computerLevel);
-          //The game continues and computer gains another level.
-      }
-    }  
+    }
   }
+  else {
+    if (result === "You won!") {
+      playerLevel += 1;
+      showPlayerLevel(playerLevel);
+        //The game continues and player gains another level; or
+    } 
+    else if (result === "The computer won!") {
+      computerLevel += 1;
+      showComputerLevel(computerLevel);
+        //The game continues and computer gains another level.
+    }
+  }  
 }
 
 

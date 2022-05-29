@@ -78,7 +78,7 @@ body {
 /* ----- Game Controller ----- */
 
 #gameController {
-    background-image: url("/images/controller.png");
+    /* background-image: url(/images/controller.png); */
     background-size: contain; 
     background-repeat: no-repeat; 
     background-position: center; 

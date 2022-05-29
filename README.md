@@ -18,7 +18,10 @@ Rock paper scissors is a classic two player game. Each player chooses either roc
 <br>
 <p>Browser Version: <a href="https://ee-tee.github.io/rock-paper-scissors-game/">https://ee-tee.github.io/rock-paper-scissors-game/</a></p>
 <p>(rockpaperscissorsWeb.js)</p>
-<p><img src="RockPaperScissors(BrowserVersion).png" width="500" height="auto"></p>
+<p>
+<span><img src="RockPaperScissors(BrowserVersion).png" width="auto" height="300"></span>
+<span><img src="RockPaperScissors(BrowserMobile).png" width="auto" height="300"></span>
+</p>
 
 <br>
 <p>Normal Version:</p>

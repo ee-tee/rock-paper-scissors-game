@@ -1,3 +1,19 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 90%;
+    margin: auto;
+}
+
+body {
+    min-height: 100vh;
+}
+
 .title {
     text-align: center; 
     background-color: black;
@@ -37,15 +53,7 @@
     box-shadow: gray 5px 5px;
 }
 
-.touch {
-    border-top: solid 0.3125rem;
-    z-index: 2;
-}
-
-img.icon {
-    width: auto;
-    width: 3.75rem;
-}
+/* ----- Blue Button ----- */
 
 .btn {
     border: 2px solid black;
@@ -57,7 +65,6 @@ img.icon {
     border-radius: 5px;
 }
 
-/* Blue Button */
 .info {
     border-color: #2196F3;
     color: dodgerblue;
@@ -68,7 +75,21 @@ img.icon {
     color: white;
 }
 
-/* Game Controller */
+/* ----- Game Controller ----- */
+
+#gameController {
+    background-image: url("/images/controller.png");
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    height: 30rem
+}
+
+.gameButton {
+    width: 1.8rem; 
+    height: auto; 
+    opacity: 0.8
+}
 
 .nav {
     list-style: none;
@@ -133,7 +154,7 @@ img.icon {
     box-shadow: inset 0px 8px 48px #ddd;
 }
 
-/* Typewriter */
+/* ----- Typewriter ----- */
 
 .typewriter {
     font-family: Courier, monospace;
@@ -170,14 +191,15 @@ img.icon {
     }
 }
 
-/* Breakpoint */
+/* ----- Breakpoint Settings ----- */
 
 #smallScreen {
     display: none;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 900px) {
 
+    /* Switch from horizontal layout to vertical layout */
     #defaultScreen {
         display: none;
     }
@@ -186,4 +208,96 @@ img.icon {
         display: flex;
     }
     
+}
+
+@media screen and (max-width: 768px) {
+
+    .nav a {
+        margin: 30px;
+        width: 55px;
+        height: 55px;
+        line-height: 55px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .gameButton {
+        width: 1.5rem; 
+    }
+
+    .nav a {
+        margin: 25px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    #gameController {
+        height: 20rem
+    }
+
+    .gameButton {
+        width: 1.3rem; 
+    }
+
+    .nav a {
+        margin: 20px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .nav a:before {
+        top: -7px;
+        left: -7px;
+        bottom: -7px;
+        right: -7px;
+    }
+
+    .h3, .h4, .typewriter-text {
+        font-size: 4.5vw;
+    }
+
+    a, p, span, nav {
+        font-size: 3.5vw;
+    }
+}
+
+@media screen and (max-width: 430px) {
+
+    .nav a {
+        margin: 12px;
+    }
+
+    .btn {
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (max-width: 340px) {
+
+    #gameController {
+        height: 15rem
+    }
+
+    .nav a {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+    }
+    
+}
+
+@media screen and (max-width: 280px) {
+
+    .nav a {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+
 }

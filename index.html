@@ -25,67 +25,67 @@
         </div>
       </div>
 
-      <!-- Default -->
+      <!-- Horizontal Layout / Default -->
       <div id="defaultScreen" class="row align-items-center pt-4">
-        <div class="col-12 col-sm-3">
+        <div class="col-sm-3">
           <img alt="image" class="img-fluid player" src="images/player.png">
         </div>
-        <div class="col-12 col-sm-3 border border-5 border-dark">
+        <div class="col-sm-3 border border-5 border-dark">
           <img alt="image" class="img-fluid playerChoice" src="images/circle-question-solid.svg" style="opacity: 0">
         </div>
-        <div class="col-12 col-sm-3 border border-5 border-dark">
+        <div class="col-sm-3 border border-5 border-dark">
           <img alt="image" class="img-fluid computerChoice" src="images/circle-question-solid.svg" style="opacity: 0">
         </div>
-        <div class="col-12 col-sm-3">
+        <div class="col-sm-3">
           <img alt="image" class="img-fluid computer" src="images/computer.png">
         </div>
-        <div class="col-12 col-sm-3">
+        <div class="col-sm-3">
           <p class="h3 text-center">Player</p>
           <p class="h3 text-center">
             Level: 
-            <span class="playerLevel">0</span>
+            <span class="playerLevel h3">0</span>
           </p>
         </div>
-        <div class="col-12 col-sm-6 border border-5 border-dark typewriter gameBox">
+        <div class="col-sm-6 border border-5 border-dark typewriter gameBox">
           <p class="gameResult h3 typewriter-text">
             Press a button on the controller.
           </p>
         </div>
-        <div class="col-12 col-sm-3">
+        <div class="col-sm-3">
           <p class="h3 text-center">Computer</p>
           <p class="h3 text-center">
             Level: 
-            <span class="computerLevel">0</span>
+            <span class="computerLevel h3">0</span>
           </p>
         </div>
       </div>
 
-      <!-- Small Breakpoint -->
+      <!-- Vertical Layout / Smaller Screen -->
       <div id="smallScreen" class="row align-items-center pt-4">
-        <div class="col-12 col-sm-6">
-          <img alt="image" class="img-fluid player" src="images/player.png">
+        <div class="col-6 col-sm-6">
+          <img alt="image" class="img-fluid player shrink" src="images/player.png">
         </div>
-        <div class="col-12 col-sm-6">
-          <img alt="image" class="img-fluid computer" src="images/computer.png">
+        <div class="col-6 col-sm-6">
+          <img alt="image" class="img-fluid computer shrink" src="images/computer.png">
         </div>
-        <div class="col-12 col-sm-6">
+        <div class="col-6 col-sm-6">
           <p class="h3 text-center">Player</p>
           <p class="h3 text-center">
             Level: 
             <span class="playerLevel">0</span>
           </p>
         </div>
-        <div class="col-12 col-sm-6">
+        <div class="col-6 col-sm-6">
           <p class="h3 text-center">Computer</p>
           <p class="h3 text-center">
             Level: 
             <span class="computerLevel">0</span>
           </p>
         </div>
-        <div class="col-12 col-sm-6 border border-5 border-dark">
+        <div class="col-6 col-sm-6 border border-5 border-dark">
           <img alt="image" class="img-fluid playerChoice" src="images/circle-question-solid.svg" style="opacity: 0">
         </div>
-        <div class="col-12 col-sm-6 border border-5 border-dark">
+        <div class="col-6 col-sm-6 border border-5 border-dark">
           <img alt="image" class="img-fluid computerChoice" src="images/circle-question-solid.svg" style="opacity: 0">
         </div>
         <div class="col-12 col-sm-12 border border-5 border-dark typewriter gameBox">
@@ -101,15 +101,15 @@
 
   <!-- Game Controller -->
   <section>
-    <div class="container block d-flex justify-content-center" style="background-image: url(images/controller.png); background-size: contain; background-repeat: no-repeat; background-position: center; height: 30rem;">
+    <div id="gameController" class="container block d-flex justify-content-center">
       <div class="row text-center">
         <div class="col-12 col-sm-12 m-auto">
           <nav>      
             <ul class="nav">
-              <li><a id="rock"><img src="images/hand-back-fist-solid.svg" style="width: 2rem; height: auto; opacity: 0.8"></a></li>
-              <li><a id="paper"><img src="images/hand-solid.svg" style="width: 2rem; height: auto; opacity: 0.8"></a></li>
-              <li><a id="scissors"><img src="images/hand-scissors-solid.svg" style="width: 2rem; height: auto; opacity: 0.8"></a></li>
-              <li><a id="bomb"><img src="images/question-solid.svg" style="width: 1.5rem; height: auto; opacity: 0.8"></a></li>
+              <li><a id="rock"><img src="images/hand-back-fist-solid.svg" class="gameButton"></a></li>
+              <li><a id="paper"><img src="images/hand-solid.svg" class="gameButton"></a></li>
+              <li><a id="scissors"><img src="images/hand-scissors-solid.svg" class="gameButton"></a></li>
+              <li><a id="bomb"><img src="images/question-solid.svg" class="gameButton"></a></li>
             </ul>
           </nav>
         </div>
@@ -126,7 +126,7 @@
         <div class="col-12 col-sm-4 col-md-3 col-lg-2 text-left">
           <a href="https://ee-tee.github.io/rock-paper-scissors-game/" class="btn info">Source Code</a>
         </div>
-        <div class="col-12 col-sm-8 col-md-6 col-lg-8 mt-4 mt-sm-0 text-center text-sm-right text-md-center">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-8 mt-1 mt-sm-0 text-center text-sm-right text-md-center">
           <span> © 2022 Project developed by ee-tee </span>
         </div>
     </div>

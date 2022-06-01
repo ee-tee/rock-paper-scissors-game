@@ -1,5 +1,8 @@
 /* ---------------------------------------------------------------------------------------
-    CodeAcademy JavaScript Project: Rock, Paper, or Scissors
+    © 2022 - Web Project Series developed by ee-tee
+--------------------------------------------------------------------------------------- *//*
+/* ---------------------------------------------------------------------------------------
+    Based on the CodeAcademy JavaScript Project: Rock, Paper, or Scissors
 --------------------------------------------------------------------------------------- *//*
 
 LEARN JAVASCRIPT
@@ -15,9 +18,14 @@ The possible outcomes are:
 - If there's a tie, then the game ends in a draw.
 
 *//* -------------------------------------------------------------------------------------
-    Task Overview
+    Web Project Overview
 --------------------------------------------------------------------------------------- *//*
+I like to write codes to build applications and make things move but I like to see them in action too. Thus after completing the Rock, Paper or Scissors JavaScript project on CodeAcademy, I decided to create a complete version that can be played on the browser.
 
+Try out the game at the link below and I hope you will enjoy playing it too!
+LIVE: https://ee-tee.github.io/rock-paper-scissors-game/
+
+Task Overview:
 1) Get the player's choice.
 2) Get the computer's choice.
 3) Compare the two choices and determine a winner.

@@ -12,6 +12,7 @@ Rock paper scissors is a classic two player game. Each player chooses either roc
 <p><em><u>Bonus Challenge:</u> Player and computer gets a level up everytime they win so let's see who can get to level 100 first. Ready, get set, GO!!! </em>😝</p>
 
 <hr><br>
+<p><b>© 2022 - Web Project Series developed by ee-tee</b></p>
 <p>I like to write codes to build applications and make things move but I like to see them in action too. Thus after completing the Rock, Paper or Scissors JavaScript project on CodeAcademy, I decided to create a complete version that can be played on the browser.</p>
 <p>Try out the game at the link below and I hope you will enjoy playing it too! (>‿◠)✌</p>
 

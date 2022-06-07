@@ -69,21 +69,21 @@ $('.toggle').click(function(e) {
   
   e.preventDefault();
   
-  $(toggle).toggleClass('toggle--on')
-         .toggleClass('toggle--off')
+  $(toggle).toggleClass('toggle--easy')
+         .toggleClass('toggle--hard')
          .addClass('toggle--moving');
   
   setTimeout(function() {
     $(toggle).removeClass('toggle--moving');
   }, 200)
 
-  if (gameDifficulty.classList.contains('toggle--on')) {
+  if (gameDifficulty.classList.contains('toggle--easy')) {
     gameClearLevel = easyMode;
     resetGame();
     resetEasy();
     console.log("New game started in easy mode - I'm a baby, I play easy!");
   } 
-  else if (gameDifficulty.classList.contains('toggle--off')) {
+  else if (gameDifficulty.classList.contains('toggle--hard')) {
     gameClearLevel = hardMode;
     resetGame();
     resetHard();

@@ -35,6 +35,11 @@ Bonus Challenge:
 5) Player and computer gets a level up everytime they win so let's see who can get to level 100 first.
    Ready, get set, GO!!!
 
+Changelog:
+v1.1
+• Added a game difficulty level toggle button under the game controller.
+• Easy Mode = level 10 and Hard Mode = level 100 for victory. The default game setting is in Hard Mode.
+
 *//* -------------------------------------------------------------------------------------
     Script
 --------------------------------------------------------------------------------------- */
@@ -48,6 +53,63 @@ const bomb = "bomb";
 let userInput = "";
 let playerLevel = 0;
 let computerLevel = 0;
+
+/* ----- Game Difficulty ----- */
+
+// Player can toggle the game difficulty level between easy mode and hard mode.
+// Easy mode = level 10 to clear the game, hard mode = level 100 to clear the game, default = hard mode.
+
+let gameDifficulty = document.getElementById("difficulty");
+let gameClearLevel = 100;
+let easyMode = 10;
+let hardMode = 100;
+
+$('.toggle').click(function(e) {
+  var toggle = this;
+  
+  e.preventDefault();
+  
+  $(toggle).toggleClass('toggle--on')
+         .toggleClass('toggle--off')
+         .addClass('toggle--moving');
+  
+  setTimeout(function() {
+    $(toggle).removeClass('toggle--moving');
+  }, 200)
+
+  if (gameDifficulty.classList.contains('toggle--on')) {
+    gameClearLevel = easyMode;
+    resetGame();
+    resetEasy();
+    console.log("New game started in easy mode - I'm a baby, I play easy!");
+  } 
+  else if (gameDifficulty.classList.contains('toggle--off')) {
+    gameClearLevel = hardMode;
+    resetGame();
+    resetHard();
+    console.log("New game started in hard mode - I'm a pro at this, challenge me!");
+  }
+});
+
+// The game will reset whenever the player toggles the difficulty mode.
+// Player and computer's levels will be reset to 0, and game console screen will be cleared.
+
+function resetGame() {
+  playerLevel = 0;
+  computerLevel = 0;
+  showPlayerLevel(playerLevel);
+  showComputerLevel(computerLevel);
+}
+
+function resetEasy() {
+  showEasyMode("playerChoice");
+  showEasyMode("computerChoice");
+}
+
+function resetHard() {
+  showHardMode("playerChoice");
+  showHardMode("computerChoice");
+}
 
 /* ------ Game Processor ------ */
 
@@ -166,14 +228,14 @@ const playGame = (userInput) => {
 // 5) Compete with the computer and race to level 100! Who will be the winner?
 
 function levelUp(result) {
-  if (playerLevel === 100 || computerLevel === 100) {
-    if (playerLevel === 100) {
+  if (playerLevel === gameClearLevel || computerLevel === gameClearLevel) {
+    if (playerLevel === gameClearLevel) {
       showGameClear();
-        // The game ends if player reaches level 100, player wins; or
+        // The game ends if player reaches level 10 (in easy mode) or 100 (in hard mode), player wins; or
     }
-    else if (computerLevel === 100) {
+    else if (computerLevel === gameClearLevel) {
       showGameOver();
-        //The game ends when computer reaches level 100, computer wins.
+        //The game ends when computer reaches level 10 (in easy mode) or 100 (in hard mode), computer wins.
     }
   }
   else {
@@ -190,12 +252,25 @@ function levelUp(result) {
   }  
 }
 
-
 /* ----- Graphics Card ----- */
 
 function onDisplay(className) {
   document.getElementsByClassName(className)[0].style.opacity = 1;
   document.getElementsByClassName(className)[1].style.opacity = 1;
+}
+
+function showEasyMode(className) {
+  document.getElementsByClassName(className)[0].style.opacity = 0;
+  document.getElementsByClassName(className)[1].style.opacity = 0;
+  document.getElementsByClassName("gameResult")[0].innerHTML = "Easy Mode: Lvl 10 to win.";
+  document.getElementsByClassName("gameResult")[1].innerHTML = "Easy Mode: Lvl 10 to win.";
+}
+
+function showHardMode(className) {
+  document.getElementsByClassName(className)[0].style.opacity = 0;
+  document.getElementsByClassName(className)[1].style.opacity = 0;
+  document.getElementsByClassName("gameResult")[0].innerHTML = "Hard Mode: Lvl 100 to win.";
+  document.getElementsByClassName("gameResult")[1].innerHTML = "Hard Mode: Lvl 100 to win.";
 }
 
 function showRock(className) {
@@ -233,15 +308,16 @@ function showComputerLevel(computerLevel) {
   document.getElementsByClassName("computerLevel")[1].innerHTML = computerLevel;
 }
 
-//Automatically end the game once player or computer reaches level 100. Good job, please go take a break!
+//Automatically end the game once player or computer reaches level 10 (in easy mode) or 100 (in hard mode). 
+//Good job, please go take a break!
 
 function showGameClear() {
   document.getElementsByClassName("playerChoice")[0].src = "images/trophy-solid.svg";
   document.getElementsByClassName("playerChoice")[1].src = "images/trophy-solid.svg";
   document.getElementsByClassName("computerChoice")[0].src = "images/hands-clapping-solid.svg";
   document.getElementsByClassName("computerChoice")[1].src = "images/hands-clapping-solid.svg";
-  document.getElementsByClassName("gameResult")[0].innerHTML = `Congrats you're level 100!<br>Time to take a break.`;
-  document.getElementsByClassName("gameResult")[1].innerHTML = `Congrats you're level 100!<br>Time to take a break.`;
+  document.getElementsByClassName("gameResult")[0].innerHTML = `Congrats you're level ${gameClearLevel}!<br>Time to take a break.`;
+  document.getElementsByClassName("gameResult")[1].innerHTML = `Congrats you're level ${gameClearLevel}!<br>Time to take a break.`;
 }
 
 function showGameOver() {
@@ -249,8 +325,8 @@ function showGameOver() {
   document.getElementsByClassName("playerChoice")[1].src = "images/face-sad-cry-solid.svg";
   document.getElementsByClassName("computerChoice")[0].src = "images/trophy-solid.svg";
   document.getElementsByClassName("computerChoice")[1].src = "images/trophy-solid.svg";
-  document.getElementsByClassName("gameResult")[0].innerHTML = `Computer is level 100!<br>Try again next time.`;
-  document.getElementsByClassName("gameResult")[1].innerHTML = `Computer is level 100!<br>Try again next time.`;
+  document.getElementsByClassName("gameResult")[0].innerHTML = `Computer is level ${gameClearLevel}!<br>Try again next time.`;
+  document.getElementsByClassName("gameResult")[1].innerHTML = `Computer is level ${gameClearLevel}!<br>Try again next time.`;
 }
 
 /* -------------------------------------------------------------------------------------

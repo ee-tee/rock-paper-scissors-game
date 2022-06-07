@@ -156,6 +156,78 @@ body {
     box-shadow: inset 0px 8px 48px #ddd;
 }
 
+/* ----- Game Difficulty Toggle Button ------ */
+
+.toggle {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 60px;
+    color: white;
+    outline: 0;
+    text-decoration: none;
+    border-radius: 100px;
+    border: 2px solid #546e7a;
+    background-color: #263238;
+    transition: all 500ms;
+}
+
+.toggle:active {
+    background-color: #1c2429;
+}
+
+.toggle:hover:not(.toggle--moving):after {
+    background-color: #455a64;
+}
+
+.toggle:after {
+    display: block;
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    line-height: 45px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: white;
+    background-color: #37474f;
+    border: 2px solid;
+    transition: all 500ms;
+}
+
+.toggle--on:after {
+    content: 'EASY';
+    border-radius: 50px 5px 5px 50px;
+    color: #66bb6a;
+}
+
+.toggle--off:after {
+    content: 'HARD';
+    border-radius: 5px 50px 50px 5px;
+    transform: translate(100%, 0);
+    color: #f44336;
+}
+
+.toggle--moving {
+    background-color: #1c2429;
+}
+
+.toggle--moving:after {
+    color: transparent;
+    border-color: #435862;
+    background-color: #222c31;
+    transition: color 0s, transform 500ms, border-radius 500ms, background-color 500ms;
+}
+
+.toggle-position {
+    position: relative;
+    z-index: 2;
+    bottom: 5rem;
+}
+
 /* ----- Typewriter ----- */
 
 .typewriter {
@@ -233,6 +305,20 @@ body {
         margin: 25px;
     }
 
+    .toggle {
+        width: 100px;
+        height: 40px;
+    }
+
+    .toggle:after {
+        font-size: 10px;
+        line-height: 25px;
+    }
+
+    .toggle-position {
+        bottom: 4rem;
+    }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -306,6 +392,10 @@ body {
 
     .btn {
         font-size: 10px;
+    }
+
+    .toggle-position {
+        bottom: 3rem;
     }
     
 }

@@ -11,6 +11,15 @@ Rock paper scissors is a classic two player game. Each player chooses either roc
 - But wait... there's also a surprise waiting for you to discover! </p>
 <p><em><u>Bonus Challenge:</u> Player and computer gets a level up everytime they win so let's see who can get to level 100 first. Ready, get set, GO!!! </em>😝</p>
 
+<hr>
+<p>Changelog:</p>
+<p>
+v1.1 <br>
+I have added an easy mode (level 10) due to players' feedback that level 100 as the victory condition is simply too sadistic. <em>*laughs*</em><br>
+• Added a game difficulty level toggle button under the game controller. <br>
+• Easy Mode = level 10 and Hard Mode = level 100 for victory. The default game setting is in Hard Mode.
+</p>
+
 <hr><br>
 <p><b>© 2022 - Web Project Series developed by ee-tee</b></p>
 <p>I like to write codes to build applications and make things move but I like to see them in action too. Thus after completing the Rock, Paper or Scissors JavaScript project on CodeAcademy, I decided to create a complete version that can be played on the browser.</p>
